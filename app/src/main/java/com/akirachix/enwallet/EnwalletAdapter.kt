@@ -9,7 +9,7 @@ import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class EnwalletAdapter (val detailsList:List<Enwallet>):RecyclerView.Adapter<DetailsViewHolder>(){
+class EnwalletAdapter (val enwalletList:List<Enwallet>):RecyclerView.Adapter<DetailsViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DetailsViewHolder {
         var itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.enwallet, parent, false)
@@ -18,13 +18,12 @@ class EnwalletAdapter (val detailsList:List<Enwallet>):RecyclerView.Adapter<Deta
     }
 
     override fun getItemCount(): Int {
-        return detailsList.size
+        return enwalletList.size
     }
 
     override fun onBindViewHolder(holder: DetailsViewHolder, position: Int) {
-        val info = detailsList[position]
+        val info = enwalletList[position]
         holder.tvName.text =info.salary
-//        holder.tvName.text = info.name
         holder.tvAmount.text = info.amount
         holder.tvDate.text = info.date
 
